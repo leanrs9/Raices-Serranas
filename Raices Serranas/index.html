@@ -8,9 +8,13 @@
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
   <style>
+    body {
+      background-color: #f3f4f6; /* bg-gray-100 */
+      color: #1f2937; /* text-gray-800 */
+    }
     .room {
-      background-color: #16a34a; /* Verde disponible */
-      color: white;
+      background-color: #34d399; /* verde claro */
+      color: #065f46; /* verde oscuro */
       border-radius: 0.5rem;
       padding: 1rem;
       text-align: center;
@@ -18,126 +22,204 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
     .room:hover {
-      background-color: #15803d;
+      background-color: #22c55e;
     }
-
     .room.reserved {
-      background-color: #e74c3c !important; /* Rojo reservado */
+      background-color: #f87171 !important; /* rojo suave */
       cursor: not-allowed;
-      opacity: 0.6;
+      opacity: 0.8;
     }
-
     .dining {
-      background-color: #4b5563;
-      color: white;
+      background-color: #9ca3af; /* gris claro */
+      color: #374151; /* gris oscuro */
       border-radius: 0.5rem;
       padding: 1rem;
       text-align: center;
       font-weight: 600;
+      cursor: default;
+      user-select: none;
     }
-
     .map-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
+    header {
+      background-color: #bbf7d0; /* verde claro pastel */
+      color: #065f46; /* verde oscuro */
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      margin-bottom: 0;
+    }
+    footer {
+      background-color: #bbf7d0;
+      color: #065f46;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      margin-top: 2rem;
+    }
+    section h2 {
+      border-bottom: 2px solid #34d399;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #065f46;
+    }
+    input, textarea, button {
+      background-color: #d1fae5; /* verde muy claro */
+      border: 1px solid #34d399;
+      color: #065f46;
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #22c55e;
+      background-color: #bbf7d0;
+    }
+    button {
+      background-color: #22c55e;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #16a34a;
+    }
+    .bg-main-image {
+      background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');
+      background-size: cover;
+      background-position: center;
+      height: 16rem; /* 64 */
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    /* WhatsApp floating button */
+    #whatsapp-button {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: #25d366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    #whatsapp-button:hover {
+      background-color: #1ebe57;
+    }
+    #whatsapp-button svg {
+      fill: white;
+      width: 28px;
+      height: 28px;
+    }
   </style>
 </head>
-<body class="text-gray-200 bg-gray-900">
+<body>
   <!-- Encabezado -->
-  <header class="bg-green-800 text-white p-6 text-center shadow-md mb-0">
+  <header>
     <h1 class="text-4xl font-bold">Raíces Serranas</h1>
     <p class="text-base mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
   </header>
 
-  <!-- Sobre nosotros -->
-<section class="px-6 py-8 max-w-5xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Sobre Nosotros</h2>
-  <p class="text-lg leading-relaxed">
-    Una hostería única, ubicada en el corazón de las sierras tandilenses. Ofrecemos una experiencia completa para quienes buscan desconectar de la rutina, descansar y conectarse con la naturaleza. Contamos con servicio de spa para relajarte por completo, desayuno casero con productos frescos, una hermosa pileta para disfrutar en verano y espacios diseñados para que te desconectes del estrés cotidiano. Aquí podrás respirar aire puro, reconectar con el entorno natural y disfrutar de momentos inolvidables en un ambiente cálido y familiar.
-  </p>
-</section>
-
   <!-- Imagen principal -->
- <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');"></section>
+  <section class="bg-main-image"></section>
 
-  <!-- Galería profesional -->
+  <!-- Sobre nosotros -->
+  <section class="px-6 py-8 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold">Sobre Nosotros</h2>
+    <p class="text-lg leading-relaxed">
+      Somos una hostería única en el corazón de las sierras serranas tandilenses. 
+      Ofrecemos servicios de spa, desayuno casero, pileta y espacios al aire libre para desconectarse de todo, 
+      reconectarse con la naturaleza y disfrutar de la tranquilidad que solo la montaña puede brindar.
+    </p>
+  </section>
+
+  <!-- Galería -->
   <section class="px-6 py-10 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://content.elmueble.com/medio/2023/11/14/como-decorar-una-habitacion-de-matrimonio_99bb8f5b_FER8191b_231114150325_900x900.jpg" alt="Habitación de matrimonio decorada" class="w-full h-full object-cover" />
+    <h2 class="text-3xl font-semibold mb-6">Galería</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+        <img src="https://content.elmueble.com/medio/2023/11/14/como-decorar-una-habitacion-de-matrimonio_99bb8f5b_FER8191b_231114150325_900x900.jpg" alt="Habitación de matrimonio decorada" class="w-full h-full object-cover" />
+      </div>
+      <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+        <img src="https://www.hola.com/horizon/landscape/4c15d31a029b-jardines-verdes-t.jpg" alt="Jardín verde" class="w-full h-full object-cover" />
+      </div>
+      <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Mv5ZHvE8hUYhQNSamwziiNAtITDcww&s" alt="Imagen 3" class="w-full h-full object-cover" />
+      </div>
+      <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHSRPJ3WpVYsO9NxgxbHi0yBoiTWM4h-5xg&s" alt="Imagen 4" class="w-full h-full object-cover" />
+      </div>
     </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://www.hola.com/horizon/landscape/4c15d31a029b-jardines-verdes-t.jpg" alt="Jardín verde" class="w-full h-full object-cover" />
-    </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Mv5ZHvE8hUYhQNSamwziiNAtITDcww&s" alt="Imagen 3" class="w-full h-full object-cover" />
-    </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHSRPJ3WpVYsO9NxgxbHi0yBoiTWM4h-5xg&s" alt="Imagen 4" class="w-full h-full object-cover" />
-    </div>
-  </div>
 
-  <!-- Modal para ampliar imagen -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
-  </div>
-
-  <script>
-    function openModal(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal').classList.remove('hidden');
-    }
-    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
-  </script>
-</section>
+    <!-- Modal para ampliar imagen -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
+    </div>
+  </section>
 
   <!-- Ubicación -->
   <section class="px-6 py-10 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Ubicación</h2>
+    <h2 class="text-3xl font-semibold mb-6">Ubicación</h2>
     <p class="text-lg mb-4">Estamos ubicados en las sierras de Tandil, Argentina.</p>
     <iframe
       src="https://maps.google.com/maps?q=Tandil%20Argentina&t=&z=13&ie=UTF8&iwloc=&output=embed"
       width="100%"
       height="300"
-      class="rounded-lg border-2 border-green-700"
+      class="rounded-lg border-2 border-green-400"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </section>
 
   <!-- Mapa interactivo de habitaciones -->
   <section class="px-6 py-10 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
+    <h2 class="text-3xl font-semibold mb-6">Disponibilidad de Habitaciones</h2>
     <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
       <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
-      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Comedor" onclick="selectRoom('Comedor')">Comedor</div>
       <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
       <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
-      <div class="dining" aria-label="Comedor">Comedor</div>
       <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
     </div>
   </section>
 
   <!-- Formulario de reservas -->
   <section class="px-6 py-10 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
+    <h2 class="text-3xl font-semibold mb-6">Reservas</h2>
     <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
-      <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <input type="email" name="email" placeholder="Tu email" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="bg-gray-700 border border-gray-600 p-2 rounded text-gray-300" readonly />
-      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
-      <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition">Enviar reserva</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" class="" required />
+      <input type="email" name="email" placeholder="Tu email" class="" required />
+      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="" readonly />
+      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="" required />
+      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class=""></textarea>
+      <button type="submit">Enviar reserva</button>
     </form>
   </section>
 
-  <footer class="text-center text-sm text-gray-300 bg-green-800 p-4 mt-8">
+  <!-- Footer -->
+  <footer>
     © 2025 Raíces Serranas - Todos los derechos reservados
   </footer>
 
-  <!-- Script de selección y disponibilidad -->
+  <!-- WhatsApp botón -->
+  <a href="https://wa.me/5491234567890" target="_blank" rel="noopener" id="whatsapp-button" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" >
+      <path d="M20.52 3.48A11.94 11.94 0 0012 0a11.92 11.92 0 00-10.54 17.21l-1.45 5.28a1 1 0 001.26 1.26l5.28-1.45A11.92 11.92 0 0024 12a11.94 11.94 0 00-3.48-8.52zm-8.22 15.17c-2.56 0-4.8-1.68-5.6-4.17l-.32-1.08a.94.94 0 01.27-1.05l1.18-1.18a.59.59 0 01.45-.18c.15 0 .3.04.43.14l1.47.98a.55.55 0 00.5.05c.38-.18 1.2-.57 1.83-1.41a.53.53 0 00.06-.51l-.7-1.59a.45.45 0 00-.48-.26c-.24 0-.67.1-1.08.6a3.23 3.23 0 01-2.32 1.25c-.2 0-.4-.04-.57-.14a2.28 2.28 0 01-1.03-1.31c-.27-.72-.53-1.68.38-2.46a2.24 2.24 0 011.58-.62c.53 0 1.03.2 1.42.58l1.29 1.29a.45.45 0 00.5.13c.26-.1 1-.36 1.69-1.33a.47.47 0 00.08-.53l-.74-1.55a.44.44 0 00-.5-.24 5.22 5.22 0 00-3.16.7 5.4 5.4 0 00-1.8 2.66c-.47 1.26-.07 2.53.55 3.44a6.94 6.94 0 005.66 3.52z" />
+    </svg>
+  </a>
+
   <script>
     const reservedRooms = ["Habitación 2", "Habitación 4"]; // Habitaciones reservadas
 
@@ -165,16 +247,13 @@
         }
       });
     });
+
+    // Modal imagen
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
   </script>
-  
-<!-- Ícono WhatsApp -->
-<a href="https://wa.me/5491234567890" target="_blank" rel="noopener" 
-   class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition"
-   aria-label="WhatsApp - Contacto directo">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
-    <path d="M20.52 3.48a11.68 11.68 0 0 0-16.53 0c-4.57 4.56-4.57 11.99 0 16.55a11.64 11.64 0 0 0 16.53 0c4.58-4.56 4.58-11.99 0-16.55Zm-7.47 15.35a8.4 8.4 0 0 1-4.5-1.29l-2.88 1.2 1.22-3a8.28 8.28 0 0 1-1.34-4.46 8.39 8.39 0 0 1 8.44-8.4 8.39 8.39 0 0 1 8.4 8.4 8.38 8.38 0 0 1-8.4 8.41Zm4.38-5.49c-.24-.12-1.42-.7-1.64-.78a.7.7 0 0 0-.3-.05c-.13 0-.26 0-.39.02a.55.55 0 0 0-.4.18c-.11.12-.42.4-.5.48a1.83 1.83 0 0 1-1.06.53c-.2 0-.37 0-.52-.03a1.83 1.83 0 0 1-1.6-1.67c0-.42.14-.7.42-.94a2.5 2.5 0 0 1 .7-.54c.15-.07.32-.15.43-.24a.75.75 0 0 0 .22-.35c.02-.12 0-.22-.03-.3-.06-.15-.53-1.28-.72-1.77-.19-.5-.39-.43-.53-.44a2.16 2.16 0 0 0-.47-.04 1.8 1.8 0 0 0-1.33.62c-.5.52-.7 1.27-.7 2.07 0 1.2.91 2.36 1.04 2.53.13.18 1.8 2.9 4.37 4.07a5.43 5.43 0 0 0 1.79.58c.23 0 .9.04 1.37-.18a3.9 3.9 0 0 0 2.4-2.43c.27-.72.27-1.34.19-1.47-.08-.13-.3-.2-.53-.31Z"/>
-  </svg>
-</a>
-  
 </body>
 </html>
