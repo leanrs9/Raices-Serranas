@@ -1,77 +1,140 @@
+/* Estilos generales */
 body {
-  background-color: #111827;
-  color: #e5e7eb;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  color: #e5e7eb; /* text-gray-200 */
+  background-color: #111827; /* bg-gray-900 */
+  font-family: system-ui, sans-serif;
 }
 
+/* Encabezado */
 header {
-  background-color: #166534;
+  background-color: #166534; /* bg-green-800 */
   color: white;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 6px -1px rgb(16 185 129 / 0.1), 0 2px 4px -2px rgb(16 185 129 / 0.1);
+  margin-bottom: 0;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
 }
 
 header p {
   margin-top: 0.5rem;
   font-size: 1rem;
-  font-weight: 500;
 }
 
+/* Secciones generales */
 section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 80rem; /* max-w-5xl / max-w-6xl según contexto */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Títulos de sección */
+section h2 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #22c55e; /* border-green-500 */
+  padding-bottom: 0.5rem;
+}
+
+/* Sobre Nosotros texto */
+section p {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+}
+
+/* Imagen principal */
+.bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 16rem; /* h-64 */
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 0.375rem;
 }
 
 /* Galería */
-.gallery {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
 }
 
-.gallery div {
-  overflow: hidden;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.h-\[250px\] {
   height: 250px;
-  position: relative;
 }
 
-.gallery div:hover {
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover\:scale-105:hover {
   transform: scale(1.05);
 }
 
-.gallery img {
+.transition {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Imagen en galería */
+.grid div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* Modal */
 #modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0,0,0,0.85);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 50;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+#modal img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.5rem;
 }
 
 #modal.show {
@@ -79,22 +142,25 @@ section {
   opacity: 1;
 }
 
-#modal img {
-  max-width: 90%;
-  max-height: 90%;
+/* Ubicación - iframe */
+iframe {
   border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: #166534; /* verde */
+  width: 100%;
+  height: 300px;
+  margin-bottom: 2rem;
 }
 
-/* Mapa de habitaciones */
+/* Mapa interactivo */
 .map-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .room {
-  background-color: #16a34a;
+  background-color: #16a34a; /* Verde disponible */
   color: white;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -102,7 +168,6 @@ section {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  user-select: none;
 }
 
 .room:hover {
@@ -110,11 +175,12 @@ section {
 }
 
 .room.reserved {
-  background-color: #e74c3c !important;
+  background-color: #e74c3c !important; /* Rojo reservado */
   cursor: not-allowed;
   opacity: 0.6;
 }
 
+/* Comedor unificado */
 .dining {
   background-color: #4b5563;
   color: white;
@@ -123,69 +189,53 @@ section {
   text-align: center;
   font-weight: 600;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
+  grid-column: span 2; /* Ocupa dos columnas para ser ancho */
 }
 
-.dining:hover {
-  background-color: #374151;
-}
-
-/* Formulario reservas */
+/* Formulario de reservas */
 form {
   display: grid;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
-form input, form textarea {
-  background-color: #1f2937;
-  border: 1px solid #374151;
-  padding: 0.75rem;
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #1f2937; /* bg-gray-800 */
+  border: 1px solid #4b5563; /* border-gray-600 */
+  padding: 0.5rem;
   border-radius: 0.375rem;
-  color: #e5e7eb;
-  font-size: 1rem;
-  resize: vertical;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-form input[readonly] {
-  background-color: #374151;
-  cursor: not-allowed;
-  color: #9ca3af;
-}
-
-form button {
-  background-color: #166534;
   color: white;
-  border: none;
-  padding: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+input[readonly] {
+  background-color: #374151; /* bg-gray-700 */
+  color: #d1d5db; /* text-gray-300 */
+  cursor: not-allowed;
+}
+
+button[type="submit"] {
+  background-color: #166534; /* bg-green-700 */
+  color: white;
+  padding: 0.5rem 1rem;
   border-radius: 0.375rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: none;
 }
 
-form button:hover {
-  background-color: #14532d;
+button[type="submit"]:hover {
+  background-color: #15803d; /* bg-green-600 */
 }
 
+/* Footer */
 footer {
-  text-align: center;
-  color: #9ca3af;
   background-color: #166534;
+  color: #d1d5db; /* text-gray-300 */
   padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
-}
-
-/* Responsive */
-@media(max-width: 600px) {
-  .map-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .dining {
-    grid-column: span 1 !important;
-  }
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 2rem;
 }
