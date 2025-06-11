@@ -1,0 +1,245 @@
+
+/* styles.css */
+
+body {
+  background-color: #1e1e1e;
+  color: #f3f3f3;
+  background-image:
+    url('https://cdn.jsdelivr.net/gh/tu-usuario/tu-repo/raices.svg'),
+    url('https://cdn.jsdelivr.net/gh/tu-usuario/tu-repo/arroyo.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+  background-size: 25% 25%, 30% 30%;
+  background-attachment: fixed;
+  background-blend-mode: lighten;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  border-bottom: 1px solid #444;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.room, .dining {
+  background-color: #2d6a4f;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #d8f3dc;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #40916c88;
+}
+
+.room:hover {
+  background-color: #40916c;
+  box-shadow: 0 0 15px #52b788cc;
+}
+
+.dining {
+  cursor: default;
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  font-size: 1.5rem;
+  box-shadow: 0 0 12px #74c69dbb;
+}
+
+.text-gray-200 {
+  color: #f3f3f3;
+}
+
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.bg-green-800 {
+  background-color: #166534;
+}
+
+.bg-green-700 {
+  background-color: #15803d;
+}
+
+.bg-green-600 {
+  background-color: #16a34a;
+}
+
+.bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.bg-gray-700 {
+  background-color: #374151;
+}
+
+.border-green-500 {
+  border-color: #22c55e;
+}
+
+.border-gray-600 {
+  border-color: #4b5563;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.sm\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.md\:grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.hover\:bg-green-600:hover {
+  background-color: #16a34a;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.transition {
+  transition-property: background-color, transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[readonly] {
+  background-color: #374151;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+button {
+  cursor: pointer;
+}
