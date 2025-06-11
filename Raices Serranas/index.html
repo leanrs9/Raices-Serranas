@@ -63,24 +63,27 @@
 
   <!-- Galería profesional -->
   <section class="px-6 py-10 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-    </div>
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
-    </div>
-    <script>
-      function openModal(src) {
-        document.getElementById('modal-img').src = src;
-        document.getElementById('modal').classList.remove('hidden');
-      }
-      document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
-    </script>
-  </section>
+  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <img src="https://content.elmueble.com/medio/2023/11/14/como-decorar-una-habitacion-de-matrimonio_99bb8f5b_FER8191b_231114150325_900x900.jpg" alt="Habitación de matrimonio decorada" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)" />
+    <img src="https://www.hola.com/horizon/landscape/4c15d31a029b-jardines-verdes-t.jpg" alt="Jardín verde" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Mv5ZHvE8hUYhQNSamwziiNAtITDcww&s" alt="Imagen 3" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHSRPJ3WpVYsO9NxgxbHi0yBoiTWM4h-5xg&s" alt="Imagen 4" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)" />
+  </div>
+
+  <!-- Modal para ampliar imagen -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+  </script>
+</section>
 
   <!-- Ubicación -->
   <section class="px-6 py-10 max-w-5xl mx-auto">
