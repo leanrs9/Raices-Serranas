@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raíces Serranas</title>
+  <title>Raíces Serranas</title> En la parte del mapa interactivo: Quiero que diga disponibilidad de habitaciones en vez de mapa de habitaciones, tambien quiero que el comer lo unifiques el boton no que sean dos botones grises
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
@@ -104,19 +104,18 @@
     ></iframe>
   </section>
 
-<!-- Mapa interactivo de habitaciones -->
-<section class="px-6 py-10 max-w-4xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Disponibilidad de Habitaciones</h2>
-  <div class="map-container" aria-label="Disponibilidad interactiva de habitaciones y comedor">
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
-    <div class="dining" tabindex="0" role="button" aria-label="Comedor" onclick="alert('Comedor seleccionado');" style="grid-column: span 2; cursor: pointer;">
-      Comedor
+  <!-- Mapa interactivo de habitaciones -->
+  <section class="px-6 py-10 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
+    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
+      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
+      <div class="dining" aria-hidden="true"></div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
     </div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
-  </div>
-</section>
+  </section>
 
   <!-- Formulario de reservas -->
   <section class="px-6 py-10 max-w-3xl mx-auto">
