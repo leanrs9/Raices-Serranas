@@ -1,13 +1,79 @@
-🚀 Instrucciones para usar el bot:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raíces Serranas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Encabezado -->
+  <header class="bg-green-700 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Raíces Serranas</h1>
+    <p class="text-sm mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
+  </header>
 
-1. Instala las dependencias:
-   pip install -r requirements.txt
+  <!-- Imagen principal -->
+  <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1200x400');">
+  </section>
 
-2. Abrí el archivo bot.py y reemplazá:
-   - TU_TOKEN_AQUI con el token de tu bot de Discord
-   - TU_CANAL_ID_AQUI con el ID del canal donde querés que envíe el mensaje con botones
+  <!-- Sobre nosotros -->
+  <section class="p-8">
+    <h2 class="text-2xl font-semibold mb-4">Sobre Nosotros</h2>
+    <p>Somos una hostería familiar ubicada en el corazón de las sierras. Ofrecemos un espacio cálido y natural para desconectar del ritmo urbano.</p>
+  </section>
 
-3. Ejecutá el bot:
-   python bot.py
+  <!-- Galería profesional -->
+  <section class="p-8 bg-gray-100">
+    <h2 class="text-2xl font-semibold mb-4">Galería</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer" onclick="openModal(this.src)">
+    </div>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50">
+      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg">
+    </div>
+    <script>
+      function openModal(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('modal').classList.remove('hidden');
+      }
+      document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+    </script>
+  </section>
 
-¡Listo! Al conectarse enviará un mensaje con botones +1 y -1 para manejar el stock.
+  <!-- Ubicación -->
+  <section class="p-8">
+    <h2 class="text-2xl font-semibold mb-4">Ubicación</h2>
+    <p>Estamos ubicados en las sierras de Córdoba, Argentina.</p>
+    <iframe src="https://maps.google.com/maps?q=C%C3%B3rdoba%20Sierras&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" class="rounded-lg"></iframe>
+  </section>
+
+  <!-- Formulario de reservas con calendario -->
+  <section class="p-8 bg-gray-100">
+    <h2 class="text-2xl font-semibold mb-4">Reservas</h2>
+    <form action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4 max-w-xl mx-auto">
+      <input type="text" name="nombre" placeholder="Tu nombre" class="border p-2 rounded" required>
+      <input type="email" name="email" placeholder="Tu email" class="border p-2 rounded" required>
+      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="border p-2 rounded" required>
+      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="border p-2 rounded"></textarea>
+      <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-800">Enviar reserva</button>
+    </form>
+    <script>
+      const picker = new Litepicker({
+        element: document.getElementById('fechas'),
+        singleMode: false,
+        format: 'DD/MM/YYYY'
+      });
+    </script>
+  </section>
+
+  <footer class="text-center text-sm text-white bg-green-700 p-4 mt-8">
+    © 2025 Raíces Serranas - Todos los derechos reservados
+  </footer>
+</body>
+</html>
