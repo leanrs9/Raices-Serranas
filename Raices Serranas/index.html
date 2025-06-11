@@ -2,19 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Raíces Serranas</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
   <style>
     body {
-      background-color: #f3f4f6; /* bg-gray-100 */
-      color: #1f2937; /* text-gray-800 */
+      background-color: #064e3b; /* verde oscuro */
+      color: #d1fae5; /* verde claro */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
     }
     .room {
-      background-color: #34d399; /* verde claro */
-      color: #065f46; /* verde oscuro */
+      background-color: #10b981; /* verde brillante */
+      color: #064e3b; /* verde oscuro */
       border-radius: 0.5rem;
       padding: 1rem;
       text-align: center;
@@ -23,16 +26,18 @@
       transition: background-color 0.3s ease;
     }
     .room:hover {
-      background-color: #22c55e;
+      background-color: #059669;
+      color: #d1fae5;
     }
     .room.reserved {
-      background-color: #f87171 !important; /* rojo suave */
+      background-color: #dc2626 !important; /* rojo */
       cursor: not-allowed;
       opacity: 0.8;
+      color: #fff;
     }
     .dining {
-      background-color: #9ca3af; /* gris claro */
-      color: #374151; /* gris oscuro */
+      background-color: #064e3b; /* mismo que fondo */
+      color: #a7f3d0;
       border-radius: 0.5rem;
       padding: 1rem;
       text-align: center;
@@ -44,51 +49,56 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      max-width: 600px;
+      margin: auto;
     }
     header {
-      background-color: #bbf7d0; /* verde claro pastel */
-      color: #065f46; /* verde oscuro */
+      background-color: #064e3b;
+      color: #a7f3d0;
       padding: 1.5rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
-      margin-bottom: 0;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.3);
+      margin-bottom: 2rem;
     }
     footer {
-      background-color: #bbf7d0;
-      color: #065f46;
+      background-color: #064e3b;
+      color: #a7f3d0;
       padding: 1rem;
       text-align: center;
       font-size: 0.875rem;
       margin-top: 2rem;
     }
     section h2 {
-      border-bottom: 2px solid #34d399;
+      border-bottom: 2px solid #10b981;
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
-      color: #065f46;
+      color: #a7f3d0;
     }
     input, textarea, button {
-      background-color: #d1fae5; /* verde muy claro */
-      border: 1px solid #34d399;
-      color: #065f46;
+      background-color: #064e3b;
+      border: 1px solid #10b981;
+      color: #a7f3d0;
       padding: 0.5rem;
       border-radius: 0.375rem;
       font-weight: 500;
     }
     input:focus, textarea:focus {
       outline: none;
-      border-color: #22c55e;
-      background-color: #bbf7d0;
+      border-color: #059669;
+      background-color: #064e3b;
+      color: #a7f3d0;
     }
     button {
-      background-color: #22c55e;
-      color: white;
+      background-color: #10b981;
+      color: #064e3b;
       font-weight: 700;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      border: none;
     }
     button:hover {
-      background-color: #16a34a;
+      background-color: #059669;
+      color: #d1fae5;
     }
     .bg-main-image {
       background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');
@@ -97,6 +107,9 @@
       height: 16rem; /* 64 */
       border-radius: 0.5rem;
       margin-bottom: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     /* WhatsApp floating button */
     #whatsapp-button {
@@ -198,62 +211,78 @@
   <!-- Formulario de reservas -->
   <section class="px-6 py-10 max-w-3xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6">Reservas</h2>
-    <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
-      <input type="text" name="nombre" placeholder="Tu nombre" class="" required />
-      <input type="email" name="email" placeholder="Tu email" class="" required />
-      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="" readonly />
-      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="" required />
-      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class=""></textarea>
-      <button type="submit">Enviar reserva</button>
+    <form id="reservation-form" action="https://formspree.io/f/mqkyowzw" method="POST" class="flex flex-col space-y-4" aria-label="Formulario de reservas">
+      <label for="name" class="font-semibold">Nombre completo</label>
+      <input id="name" name="name" type="text" required aria-required="true" placeholder="Tu nombre completo" />
+      
+      <label for="email" class="font-semibold">Correo electrónico</label>
+      <input id="email" name="email" type="email" required aria-required="true" placeholder="Tu correo electrónico" />
+      
+      <label for="checkin" class="font-semibold">Fecha de llegada</label>
+      <input id="checkin" name="checkin" type="text" required aria-required="true" placeholder="Selecciona la fecha" autocomplete="off" />
+      
+      <label for="checkout" class="font-semibold">Fecha de salida</label>
+      <input id="checkout" name="checkout" type="text" required aria-required="true" placeholder="Selecciona la fecha" autocomplete="off" />
+      
+      <label for="room" class="font-semibold">Habitación</label>
+      <select id="room" name="room" required aria-required="true" class="bg-green-700 text-green-100">
+        <option value="" disabled selected>Selecciona una habitación</option>
+        <option value="Habitación 1">Habitación 1</option>
+        <option value="Habitación 2">Habitación 2</option>
+        <option value="Habitación 3">Habitación 3</option>
+        <option value="Habitación 4">Habitación 4</option>
+      </select>
+
+      <button type="submit" aria-label="Enviar reserva">Reservar</button>
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Raíces Serranas - Todos los derechos reservados
-  </footer>
-
-  <!-- WhatsApp botón -->
-  <a href="https://wa.me/5491234567890" target="_blank" rel="noopener" id="whatsapp-button" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" >
-      <path d="M20.52 3.48A11.94 11.94 0 0012 0a11.92 11.92 0 00-10.54 17.21l-1.45 5.28a1 1 0 001.26 1.26l5.28-1.45A11.92 11.92 0 0024 12a11.94 11.94 0 00-3.48-8.52zm-8.22 15.17c-2.56 0-4.8-1.68-5.6-4.17l-.32-1.08a.94.94 0 01.27-1.05l1.18-1.18a.59.59 0 01.45-.18c.15 0 .3.04.43.14l1.47.98a.55.55 0 00.5.05c.38-.18 1.2-.57 1.83-1.41a.53.53 0 00.06-.51l-.7-1.59a.45.45 0 00-.48-.26c-.24 0-.67.1-1.08.6a3.23 3.23 0 01-2.32 1.25c-.2 0-.4-.04-.57-.14a2.28 2.28 0 01-1.03-1.31c-.27-.72-.53-1.68.38-2.46a2.24 2.24 0 011.58-.62c.53 0 1.03.2 1.42.58l1.29 1.29a.45.45 0 00.5.13c.26-.1 1-.36 1.69-1.33a.47.47 0 00.08-.53l-.74-1.55a.44.44 0 00-.5-.24 5.22 5.22 0 00-3.16.7 5.4 5.4 0 00-1.8 2.66c-.47 1.26-.07 2.53.55 3.44a6.94 6.94 0 005.66 3.52z" />
+  <!-- WhatsApp flotante -->
+  <a
+    href="https://wa.me/5491234567890"
+    target="_blank"
+    rel="noopener noreferrer"
+    id="whatsapp-button"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M20.52 3.48A11.84 11.84 0 0012 0C5.373 0 0 5.372 0 12a11.84 11.84 0 001.97 6.17L0 24l5.9-1.94A11.93 11.93 0 0012 24c6.627 0 12-5.372 12-12 0-3.19-1.25-6.19-3.48-8.52zm-8.34 17.25a7.85 7.85 0 01-4.13-1.17l-.3-.18-3.1.81.83-3.02-.2-.31a7.85 7.85 0 111.92 3.87zm4.18-5.06c-.23-.12-1.35-.67-1.56-.75-.21-.08-.36-.12-.52.13s-.6.75-.74.9c-.14.15-.28.17-.52.06a6.88 6.88 0 01-2.02-1.25 7.53 7.53 0 01-1.4-1.74c-.15-.26-.02-.4.11-.53.12-.12.26-.28.39-.42.13-.14.18-.24.28-.4a.6.6 0 00.1-.5c-.03-.12-.52-1.25-.72-1.71-.19-.45-.38-.39-.52-.4-.13-.01-.28-.01-.43-.01-.15 0-.4.06-.61.28-.21.21-.8.77-.8 1.87 0 1.1.82 2.16.94 2.31.13.15 1.63 2.5 3.95 3.5a3.9 3.9 0 001.75.27c.27 0 1.05-.43 1.2-.85.15-.42.15-.77.1-.85-.05-.08-.2-.12-.42-.24z"/>
     </svg>
   </a>
 
   <script>
-    const reservedRooms = ["Habitación 2", "Habitación 4"]; // Habitaciones reservadas
-
-    const picker = new Litepicker({
-      element: document.getElementById('fechas'),
-      singleMode: false,
-      format: 'DD/MM/YYYY',
-    });
-
-    function selectRoom(roomName) {
-      if (reservedRooms.includes(roomName)) return;
-      const habitacionInput = document.getElementById('habitacion');
-      habitacionInput.value = roomName;
-      habitacionInput.focus();
-      document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const rooms = document.querySelectorAll('.room');
-      rooms.forEach(room => {
-        const name = room.textContent.trim();
-        if (reservedRooms.includes(name)) {
-          room.classList.add('reserved');
-          room.setAttribute('aria-disabled', 'true');
-        }
-      });
-    });
-
-    // Modal imagen
+    // Modal imagen galería
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
     function openModal(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal').classList.remove('hidden');
+      modalImg.src = src;
+      modal.classList.remove('hidden');
     }
-    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+    modal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    // Selector de habitaciones en mapa interactivo
+    function selectRoom(roomName) {
+      alert('Seleccionaste: ' + roomName);
+      // Aquí puedes agregar lógica para marcar o filtrar, si quieres
+    }
+
+    // Litepicker para fechas
+    const pickerCheckin = new Litepicker({
+      element: document.getElementById('checkin'),
+      singleMode: true,
+      numberOfMonths: 1,
+      format: 'DD/MM/YYYY',
+      minDate: new Date(),
+    });
+    const pickerCheckout = new Litepicker({
+      element: document.getElementById('checkout'),
+      singleMode: true,
+      numberOfMonths: 1,
+      format: 'DD/MM/YYYY',
+      minDate: new Date(),
+    });
   </script>
 </body>
 </html>
