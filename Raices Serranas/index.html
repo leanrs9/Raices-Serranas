@@ -4,37 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raíces Serranas</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
   <style>
     body {
       background-color: #1e1e1e;
       color: #f3f3f3;
-      background-image:
-        url('https://cdn.jsdelivr.net/gh/user/repo/raices.svg'),
-        url('https://cdn.jsdelivr.net/gh/user/repo/arroyo.svg');
-      background-repeat: no-repeat, no-repeat;
-      background-position: bottom left, top right;
-      background-size: 25% 25%, 30% 30%;
-      background-attachment: fixed;
-      background-blend-mode: lighten;
-      background-color: #1e1e1e;
     }
-    section.gallery-section {
-      margin-top: 3rem;
+    section {
+      border-bottom: 1px solid #444;
     }
-    /* Para que el header contraste mejor con el fondo oscuro */
-    header {
-      background-color: #256029; /* verde oscuro */
+    /* Mapa interactivo de habitaciones */
+    .map-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      padding: 1rem;
+    }
+    .room, .dining {
+      background-color: #2d6a4f;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #d8f3dc;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 8px #40916c88;
+    }
+    .room:hover {
+      background-color: #40916c;
+      box-shadow: 0 0 15px #52b788cc;
+    }
+    .dining {
+      cursor: default;
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      font-size: 1.5rem;
+      box-shadow: 0 0 12px #74c69dbb;
     }
   </style>
 </head>
-<body class="bg-transparent text-gray-200">
+<body class="text-gray-200">
   <!-- Encabezado -->
-  <header class="text-white p-6 text-center">
-    <h1 class="text-3xl font-bold">Raíces Serranas</h1>
-    <p class="text-sm mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
+  <header class="bg-green-800 text-white p-6 text-center shadow-md mb-0">
+    <h1 class="text-4xl font-bold">Raíces Serranas</h1>
+    <p class="text-base mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
   </header>
 
   <!-- Sobre nosotros -->
@@ -43,32 +65,81 @@
     <p class="text-lg leading-relaxed">Somos una hostería familiar ubicada en el corazón de las sierras. Ofrecemos un espacio cálido y natural para desconectar del ritmo urbano.</p>
   </section>
 
+  <!-- Imagen principal -->
+  <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1200x400');">
+  </section>
+
   <!-- Galería profesional -->
-  <section class="gallery-section px-6 py-10 max-w-6xl mx-auto bg-gray-900 bg-opacity-50 rounded-lg">
+  <section class="px-6 py-10 max-w-6xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer hover:scale-105 transition transform" onclick="openModal(this.src)" />
-      <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer hover:scale-105 transition transform" onclick="openModal(this.src)" />
-      <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer hover:scale-105 transition transform" onclick="openModal(this.src)" />
-      <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer hover:scale-105 transition transform" onclick="openModal(this.src)" />
+      <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
     </div>
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50">
-      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg">
+    </div>
+    <script>
+      function openModal(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('modal').classList.remove('hidden');
+      }
+      document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+    </script>
+  </section>
+
+  <!-- Ubicación -->
+  <section class="px-6 py-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Ubicación</h2>
+    <p class="text-lg mb-4">Estamos ubicados en las sierras de Córdoba, Argentina.</p>
+    <iframe src="https://maps.google.com/maps?q=C%C3%B3rdoba%20Sierras&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" class="rounded-lg border-2 border-green-700"></iframe>
+  </section>
+
+  <!-- Mapa interactivo de habitaciones -->
+  <section class="px-6 py-10 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
+    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
+      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
+      <div class="dining" aria-hidden="true"></div> <!-- Espacio para que el comedor ocupe dos filas -->
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
     </div>
   </section>
 
-  <!-- Imagen principal -->
-  <section class="w-full h-64 bg-cover bg-center my-12" style="background-image: url('https://via.placeholder.com/1200x400');"></section>
+  <!-- Formulario de reservas con calendario -->
+  <section class="px-6 py-10 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
+    <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
+      <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required>
+      <input type="email" name="email" placeholder="Tu email" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required>
+      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="bg-gray-700 border border-gray-600 p-2 rounded text-gray-300" readonly>
+      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required>
+      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
+      <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition">Enviar reserva</button>
+    </form>
+    <script>
+      const picker = new Litepicker({
+        element: document.getElementById('fechas'),
+        singleMode: false,
+        format: 'DD/MM/YYYY'
+      });
 
-  <!-- Ubicación con mapa y reserva interactiva aquí (puedes integrar después) -->
-  <!-- ... El resto de tu contenido ... -->
+      function selectRoom(roomName) {
+        const habitacionInput = document.getElementById('habitacion');
+        habitacionInput.value = roomName;
+        habitacionInput.focus();
+        // Scroll to reservation form
+        document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
+  </section>
 
-  <script>
-    function openModal(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal').classList.remove('hidden');
-    }
-    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
-  </script>
+  <footer class="text-center text-sm text-gray-300 bg-green-800 p-4 mt-8">
+    © 2025 Raíces Serranas - Todos los derechos reservados
+  </footer>
 </body>
 </html>
