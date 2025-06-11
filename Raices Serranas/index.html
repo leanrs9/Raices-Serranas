@@ -25,26 +25,26 @@
   <!-- Imagen principal -->
   <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1200x400');"></section>
 
-  <!-- Galería profesional -->
-  <section class="px-6 py-10 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-      <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
-    </div>
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-      <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
-    </div>
-    <script>
-      function openModal(src) {
-        document.getElementById('modal-img').src = src;
-        document.getElementById('modal').classList.remove('hidden');
-      }
-      document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
-    </script>
-  </section>
+<!-- Galería profesional (movida arriba) -->
+<section class="px-6 py-10 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <img src="https://via.placeholder.com/400" alt="Habitación 1" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+    <img src="https://via.placeholder.com/400" alt="Jardín" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+    <img src="https://via.placeholder.com/400" alt="Comedor" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+    <img src="https://via.placeholder.com/400" alt="Vista exterior" class="rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.src)">
+  </div>
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
+  </div>
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+  </script>
+</section>
 
   <!-- Ubicación -->
   <section class="px-6 py-10 max-w-5xl mx-auto">
