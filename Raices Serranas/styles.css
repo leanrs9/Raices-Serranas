@@ -242,3 +242,24 @@ input[readonly] {
 button {
   cursor: pointer;
 }
+
+#instagram-button {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  z-index: 1000;
+  padding: 8px;
+}
+#instagram-button:hover {
+  filter: brightness(0.85);
+}
