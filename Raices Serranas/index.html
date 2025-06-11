@@ -8,6 +8,22 @@
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
   <style>
+    /* Sección con fondo blanco y texto oscuro */
+    .section-white-bg {
+      background-color: white;
+      color: #111111;
+      padding: 2rem 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Para que los títulos dentro de esas secciones tengan color verde oscuro */
+    .section-white-bg h2 {
+      color: #065f46; /* verde oscuro */
+      border-bottom-color: #10b981 !important;
+    }
+
     .room {
       background-color: #16a34a; /* Verde disponible */
       color: white;
@@ -45,7 +61,7 @@
     }
     
     header {
-      background-color: #064e3b;
+      background-color: #33ff7d;
       color: #a7f3d0;
       padding: 1.5rem 1rem;
       text-align: center;
@@ -69,7 +85,7 @@
     input, textarea, button {
       background-color: #064e3b;
       border: 1px solid #10b981;
-      color: #a7f3d0;
+      color: #33ff7d;
       padding: 0.5rem;
       border-radius: 0.375rem;
       font-weight: 500;
@@ -124,27 +140,26 @@
       background-color: #128C7E;
     }
 
-#instagram-button {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: filter 0.3s ease;
-  z-index: 1000;
-  padding: 8px;
-}
-#instagram-button:hover {
-  filter: brightness(0.85);
-}
-    
+    #instagram-button {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+      z-index: 1000;
+      padding: 8px;
+    }
+    #instagram-button:hover {
+      filter: brightness(0.85);
+    }
   </style>
 </head>
 <body class="text-gray-200 bg-gray-900">
@@ -155,150 +170,132 @@
   </header>
 
   <!-- Sobre nosotros -->
- <section class="px-6 py-8 max-w-5xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Sobre Nosotros</h2>
-  <p class="text-lg leading-relaxed">
-   Una hostería única, ubicada en el corazón de las sierras tandilenses. Ofrecemos una experiencia completa para quienes buscan desconectar de la rutina, descansar y conectarse con la naturaleza. Contamos con servicio de spa para relajarte por completo, desayuno casero con productos frescos, una hermosa pileta para disfrutar en verano y espacios diseñados para que te desconectes del estrés cotidiano. Aquí podrás respirar aire puro, reconectar con el entorno natural y disfrutar de momentos inolvidables en un ambiente cálido y familiar.
-  </p>
-</section>
+  <section class="section-white-bg max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Sobre Nosotros</h2>
+    <p class="text-lg leading-relaxed">
+      Una hostería única, ubicada en el corazón de las sierras tandilenses. Ofrecemos una experiencia completa para quienes buscan desconectar de la rutina, descansar y conectarse con la naturaleza. Contamos con servicio de spa para relajarte por completo, desayuno casero con productos frescos, una hermosa pileta para disfrutar en verano y espacios diseñados para que te desconectes del estrés cotidiano. Aquí podrás respirar aire puro, reconectar con el entorno natural y disfrutar de momentos inolvidables en un ambiente cálido y familiar.
+    </p>
+  </section>
 
   <!-- Imagen principal -->
-  <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');"></section>
+  <section class="w-full h-64 bg-cover bg-center mb-8 max-w-5xl mx-auto rounded-lg" style="background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');"></section>
 
   <!-- Galería profesional -->
-  <section class="px-6 py-10 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://content.elmueble.com/medio/2023/11/14/como-decorar-una-habitacion-de-matrimonio_99bb8f5b_FER8191b_231114150325_900x900.jpg" alt="Habitación de matrimonio decorada" class="w-full h-full object-cover" />
+  <section class="section-white-bg max-w-6xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="https://source.unsplash.com/800x600/?nature,forest" alt="Foto 1" class="rounded-lg shadow-md object-cover w-full h-48" />
+      <img src="https://source.unsplash.com/800x600/?nature,mountain" alt="Foto 2" class="rounded-lg shadow-md object-cover w-full h-48" />
+      <img src="https://source.unsplash.com/800x600/?nature,lake" alt="Foto 3" class="rounded-lg shadow-md object-cover w-full h-48" />
+      <img src="https://source.unsplash.com/800x600/?nature,cabin" alt="Foto 4" class="rounded-lg shadow-md object-cover w-full h-48" />
+      <img src="https://source.unsplash.com/800x600/?nature,trees" alt="Foto 5" class="rounded-lg shadow-md object-cover w-full h-48" />
+      <img src="https://source.unsplash.com/800x600/?nature,waterfall" alt="Foto 6" class="rounded-lg shadow-md object-cover w-full h-48" />
     </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://www.hola.com/horizon/landscape/4c15d31a029b-jardines-verdes-t.jpg" alt="Jardín verde" class="w-full h-full object-cover" />
-    </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Mv5ZHvE8hUYhQNSamwziiNAtITDcww&s" alt="Imagen 3" class="w-full h-full object-cover" />
-    </div>
-    <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHSRPJ3WpVYsO9NxgxbHi0yBoiTWM4h-5xg&s" alt="Imagen 4" class="w-full h-full object-cover" />
-    </div>
-  </div>
-
-  <!-- Modal para ampliar imagen -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
-  </div>
-
-  <script>
-    function openModal(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal').classList.remove('hidden');
-    }
-    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
-  </script>
-</section>
+  </section>
 
   <!-- Ubicación -->
-  <section class="px-6 py-10 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Ubicación</h2>
-    <p class="text-lg mb-4">Estamos ubicados en las sierras de Tandil, Argentina.</p>
+  <section class="section-white-bg max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Ubicación</h2>
+    <p class="mb-4">Estamos ubicados en las sierras tandilenses, un entorno natural privilegiado ideal para el descanso y el contacto con la naturaleza.</p>
     <iframe
-      src="https://maps.google.com/maps?q=Tandil%20Argentina&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.098073686778!2d-59.14243358477016!3d-37.32165757981581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a12a53a7351e1d%3A0x49f5b04c882e0ce0!2sTandil%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1696982390123!5m2!1ses!2sar"
       width="100%"
       height="300"
-      class="rounded-lg border-2 border-green-700"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="rounded-lg shadow-md"
     ></iframe>
   </section>
 
-  <!-- Mapa interactivo de habitaciones -->
-  <section class="px-6 py-10 max-w-4xl mx-auto">
+  <!-- Mapa de habitaciones -->
+  <section class="section-white-bg max-w-5xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
-    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
-      <div class="dining" aria-label="Comedor">Comedor</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
-      <div class="dining" aria-label="Comedor">Comedor</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
+    <div class="map-container">
+      <div class="room">Habitación 1</div>
+      <div class="room">Habitación 2</div>
+      <div class="room reserved" title="Reservada">Habitación 3</div>
+      <div class="room">Habitación 4</div>
+      <div class="room reserved" title="Reservada">Habitación 5</div>
+      <div class="room">Habitación 6</div>
+      <div class="dining" title="Comedor">Comedor</div>
+      <div class="room">Habitación 7</div>
+      <div class="room">Habitación 8</div>
     </div>
   </section>
 
   <!-- Formulario de reservas -->
-  <section class="px-6 py-10 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
-    <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
-      <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <input type="email" name="email" placeholder="Tu email" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="bg-gray-700 border border-gray-600 p-2 rounded text-gray-300" readonly />
-      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
-      <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition">Enviar reserva</button>
+  <section class="section-white-bg max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Reservas</h2>
+    <form id="bookingForm" class="flex flex-col space-y-4">
+      <input type="text" id="name" placeholder="Nombre completo" required />
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="tel" id="phone" placeholder="Teléfono" required />
+      <input type="text" id="room" placeholder="Habitación deseada" required />
+      <input type="text" id="checkin" placeholder="Fecha de entrada" autocomplete="off" required />
+      <input type="text" id="checkout" placeholder="Fecha de salida" autocomplete="off" required />
+      <textarea id="notes" placeholder="Notas adicionales" rows="3"></textarea>
+      <button type="submit">Enviar reserva</button>
     </form>
   </section>
 
-    <!-- WhatsApp flotante -->
-<a
-  href="https://wa.me/5491234567890"
-  target="_blank"
-  rel="noopener noreferrer"
-  id="whatsapp-button"
-  aria-label="Contactar por WhatsApp"
->
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
-    alt="WhatsApp"
-    style="width: 40px; height: 40px;"
-  />
-</a>
-  
-  <!-- Instagram flotante -->
-  <a
-  href="https://www.instagram.com/tu_usuario"
-  target="_blank"
-  rel="noopener noreferrer"
-  id="instagram-button"
-  aria-label="Visitar Instagram"
->
-  <img
-    src="https://imgs.search.brave.com/_B-FpDvjsFy1gn-APQ-FDaKOiWV3hCfa37qXlK6k-WA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODBiNTdmY2Q5OTk2/ZTI0YmM0M2M1MjEu/cG5n"
-    alt="Instagram"
-    style="width: 40px; height: 40px;"
-  />
-</a>
-
-  <footer class="text-center text-sm text-gray-300 bg-green-800 p-4 mt-8">
-    © 2025 Raíces Serranas - Todos los derechos reservados
+  <footer>
+    <p>© 2025 Raíces Serranas - Todos los derechos reservados</p>
   </footer>
 
-  <!-- Script de selección y disponibilidad -->
-  <script>
-    const reservedRooms = ["Habitación 2", "Habitación 4"]; // Habitaciones reservadas
+  <!-- Botones flotantes WhatsApp e Instagram -->
+  <a href="https://wa.me/5491137456432" target="_blank" rel="noopener" id="whatsapp-button" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M20.52 3.48A11.937 11.937 0 0012 0C5.373 0 0 5.373 0 12c0 2.113.554 4.077 1.52 5.82L0 24l6.38-1.52A11.937 11.937 0 0012 24c6.627 0 12-5.373 12-12a11.934 11.934 0 00-3.48-8.52zm-8.48 17.25c-1.913 0-3.715-.612-5.204-1.75l-.372-.275-3.79.9.91-3.705-.248-.382a9.939 9.939 0 01-1.52-5.595c0-5.522 4.477-10 10-10 2.676 0 5.187 1.042 7.07 2.925a9.998 9.998 0 012.93 7.07c0 5.523-4.478 10-10 10zm5.228-6.92l-1.348-.614a.403.403 0 00-.434.086l-.97 1.05a8.1 8.1 0 01-3.847-3.846l1.051-.969a.403.403 0 00.086-.433l-.615-1.348a.402.402 0 00-.46-.242c-.6.12-1.19.3-1.744.54-.28.13-.512.388-.59.695a4.91 4.91 0 00-.22 1.697c0 2.72 2.21 4.932 4.93 4.932.57 0 1.13-.12 1.644-.354.315-.148.527-.466.56-.82a.407.407 0 00-.235-.458z"/>
+    </svg>
+  </a>
 
-    const picker = new Litepicker({
-      element: document.getElementById('fechas'),
-      singleMode: false,
+  <a href="https://instagram.com/raicesser" target="_blank" rel="noopener" id="instagram-button" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.337 3.608 1.312.975.975 1.25 2.242 1.312 3.608.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.337 2.633-1.312 3.608-.975.975-2.242 1.25-3.608 1.312-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.337-3.608-1.312-.975-.975-1.25-2.242-1.312-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.337-2.633 1.312-3.608.975-.975 2.242-1.25 3.608-1.312C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.773.128 4.59.418 3.535 1.473 2.48 2.528 2.19 3.711 2.132 4.99.07 7.052 0 8.741 0 12c0 3.259.07 4.948.07 5.228.058 1.279.348 2.462 1.403 3.517 1.055 1.055 2.238 1.345 3.517 1.403C8.332 23.988 8.741 24 12 24c3.259 0 4.948-.07 5.228-.07 1.279-.058 2.462-.348 3.517-1.403 1.055-1.055 1.345-2.238 1.403-3.517.058-1.28.07-1.689.07-5.228 0-3.259-.07-4.948-.07-5.228-.058-1.279-.348-2.462-1.403-3.517-1.055-1.055-2.238-1.345-3.517-1.403C16.948.012 16.259 0 12 0z"/>
+      <path d="M12 5.838a6.162 6.162 0 106.162 6.162A6.169 6.169 0 0012 5.838zm0 10.162a3.999 3.999 0 113.999-3.999A4.006 4.006 0 0112 16z"/>
+      <circle cx="18.406" cy="5.594" r="1.44"/>
+    </svg>
+  </a>
+
+  <script>
+    // Inicializar Litepicker para los campos de fecha
+    const pickerCheckin = new Litepicker({
+      element: document.getElementById('checkin'),
       format: 'DD/MM/YYYY',
+      minDate: new Date(),
+      dropdowns: {
+        minYear: new Date().getFullYear(),
+        maxYear: new Date().getFullYear() + 2,
+        months: true,
+        years: true,
+      },
+      setup: (picker) => {
+        picker.on('selected', (date) => {
+          pickerCheckout.setMinDate(date.dateInstance);
+        });
+      }
     });
 
-    function selectRoom(roomName) {
-      if (reservedRooms.includes(roomName)) return;
-      const habitacionInput = document.getElementById('habitacion');
-      habitacionInput.value = roomName;
-      habitacionInput.focus();
-      document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth' });
-    }
+    const pickerCheckout = new Litepicker({
+      element: document.getElementById('checkout'),
+      format: 'DD/MM/YYYY',
+      minDate: new Date(),
+      dropdowns: {
+        minYear: new Date().getFullYear(),
+        maxYear: new Date().getFullYear() + 2,
+        months: true,
+        years: true,
+      },
+    });
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const rooms = document.querySelectorAll('.room');
-      rooms.forEach(room => {
-        const name = room.textContent.trim();
-        if (reservedRooms.includes(name)) {
-          room.classList.add('reserved');
-          room.setAttribute('aria-disabled', 'true');
-        }
-      });
+    // Manejo del envío del formulario (ejemplo)
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Gracias por enviar tu reserva. Nos pondremos en contacto pronto.');
+      this.reset();
     });
   </script>
-  
-
 </body>
 </html>
