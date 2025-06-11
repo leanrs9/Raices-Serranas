@@ -113,17 +113,17 @@
   </section>
 
   <!-- Mapa interactivo de habitaciones -->
-<section class="px-6 py-10 max-w-4xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Disponibilidad de Habitaciones</h2>
-  <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" style="background-color: #16a34a; color: white; border-radius: 0.5rem; padding: 1rem; text-align: center; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;" onclick="selectRoom('Habitación 1')" onmouseover="this.style.backgroundColor='#15803d'" onmouseout="this.style.backgroundColor='#16a34a'">Habitación 1</div>
-    <div class="dining" aria-label="Comedor" style="background-color: #4b5563; color: white; border-radius: 0.5rem; padding: 1rem; text-align: center; font-weight: 600; grid-column: span 2; cursor: pointer;">Comedor</div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" style="background-color: #16a34a; color: white; border-radius: 0.5rem; padding: 1rem; text-align: center; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;" onclick="selectRoom('Habitación 2')" onmouseover="this.style.backgroundColor='#15803d'" onmouseout="this.style.backgroundColor='#16a34a'">Habitación 2</div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" style="background-color: #16a34a; color: white; border-radius: 0.5rem; padding: 1rem; text-align: center; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;" onclick="selectRoom('Habitación 3')" onmouseover="this.style.backgroundColor='#15803d'" onmouseout="this.style.backgroundColor='#16a34a'">Habitación 3</div>
-    <div class="dining" aria-hidden="true" style="background-color: transparent;"></div>
-    <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" style="background-color: #16a34a; color: white; border-radius: 0.5rem; padding: 1rem; text-align: center; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;" onclick="selectRoom('Habitación 4')" onmouseover="this.style.backgroundColor='#15803d'" onmouseout="this.style.backgroundColor='#16a34a'">Habitación 4</div>
-  </div>
-</section>
+  <section class="px-6 py-10 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
+    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
+      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
+      <div class="dining" aria-hidden="true"></div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
+    </div>
+  </section>
 
   <!-- Formulario de reservas -->
   <section class="px-6 py-10 max-w-3xl mx-auto">
