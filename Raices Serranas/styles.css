@@ -22,13 +22,9 @@ section {
 }
 
 .map-container {
-  max-width: 800px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  padding: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .room, .dining {
@@ -61,10 +57,12 @@ section {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease;
+  
+  grid-column: span 2; /* Ocupa dos columnas en el grid */
 }
 
 .dining:hover {
-  background-color: #374151; /* Un gris más oscuro al hover */
+  background-color: #374151;
 }
 
 .text-gray-200 {
