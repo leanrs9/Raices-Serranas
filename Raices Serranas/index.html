@@ -209,7 +209,7 @@ nav a:hover {
    <section class="w-full h-64 bg-cover bg-center mb-8 max-w-5xl mx-auto rounded-lg" style="background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');"></section>
 
   <!-- Galería profesional -->
-  <section class="px-6 py-10 max-w-6xl mx-auto">
+  <section id="galeria" class="px-6 py-10 max-w-6xl mx-auto">
   <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
     <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
@@ -241,7 +241,7 @@ nav a:hover {
 </section>
 
   <!-- Ubicación -->
-  <section class="px-6 py-10 max-w-5xl mx-auto">
+  <section id="ubicacion" class="px-6 py-10 max-w-5xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Ubicación</h2>
     <p class="text-lg mb-4">Estamos ubicados en las sierras de Tandil, Argentina.</p>
     <iframe
@@ -253,7 +253,7 @@ nav a:hover {
   </section>
 
   <!-- Mapa interactivo de habitaciones -->
-  <section class="px-6 py-10 max-w-4xl mx-auto">
+  <section id="mapa" class="px-6 py-10 max-w-4xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
     <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
       <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
@@ -266,7 +266,7 @@ nav a:hover {
   </section>
 
   <!-- Formulario de reservas -->
-  <section class="px-6 py-10 max-w-3xl mx-auto">
+  <section id="reservas" class="px-6 py-10 max-w-3xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
     <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
       <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
