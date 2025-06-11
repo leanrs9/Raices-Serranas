@@ -125,7 +125,6 @@ section {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease;
-  grid-column: span 2;
 }
 
 .dining:hover {
