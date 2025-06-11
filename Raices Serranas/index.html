@@ -267,13 +267,13 @@ nav a:hover {
   <!-- Mapa interactivo de habitaciones -->
   <section id="mapa" class="px-6 py-10 max-w-4xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Habitaciones Disponibles</h2>
-    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1 (Simple)</div>
+    <div class="map-container" aria-label="Mapa interactivo de habitaciones">
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1 (Simple)')">Habitación 1 (Simple)</div>
       <div class="dining" aria-label="Comedor">Hall</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2 (Simple)</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3 (Doble)</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2 (Simple)')">Habitación 2 (Simple)</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3 (Doble)')">Habitación 3 (Doble)</div>
       <div class="dining" aria-label="Comedor">Hall</div>
-      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4 (Doble)</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4 (Doble)')">Habitación 4 (Doble)</div>
     </div>
   </section>
 
@@ -284,8 +284,8 @@ nav a:hover {
       <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
       <input type="email" name="email" placeholder="Tu email" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
       <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="bg-gray-700 border border-gray-600 p-2 rounded text-gray-300" readonly />
-      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
-      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
+      <input type="text" name="fechas" id="fechas" placeholder="Fecha de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
+      <textarea name="mensaje" placeholder="Detalle de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
       <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition">Enviar reserva</button>
     </form>
   </section>
