@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raíces Serranas</title> 
+  <title>Raíces Serranas</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
@@ -45,7 +45,7 @@
     }
     
     header {
-      background-color: #166f45; /* Verde un poco más claro */
+      background-color: #064e3b;
       color: #a7f3d0;
       padding: 1.5rem 1rem;
       text-align: center;
@@ -53,7 +53,7 @@
       margin-bottom: 2rem;
     }
     footer {
-      background-color: #166f45; /* Verde un poco más claro */
+      background-color: #064e3b;
       color: #a7f3d0;
       padding: 1rem;
       text-align: center;
@@ -64,7 +64,7 @@
       border-bottom: 2px solid #10b981;
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
-      color: white; /* Cambiado a blanco */
+      color: #a7f3d0;
     }
     input, textarea, button {
       background-color: #064e3b;
@@ -144,31 +144,7 @@
 #instagram-button:hover {
   filter: brightness(0.85);
 }
-
-/* NUEVOS BOTONES DE NAVEGACION */
-nav {
-  max-width: 960px;
-  margin: 0 auto 2rem auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  background-color: #166f45; /* verde similar al header */
-  border-radius: 0.5rem;
-}
-nav a {
-  background-color: #10b981;
-  color: #064e3b;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-nav a:hover {
-  background-color: #059669;
-  color: #d1fae5;
-}
+    
   </style>
 </head>
 <body class="text-gray-200 bg-gray-900">
@@ -178,7 +154,7 @@ nav a:hover {
     <p class="text-base mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
   </header>
 
-  <!-- Navegación -->
+    <!-- Navegación -->
   <nav>
     <a href="#galeria">Galería</a>
     <a href="#ubicacion">Ubicación</a>
@@ -198,7 +174,7 @@ nav a:hover {
   <section class="w-full h-64 bg-cover bg-center" style="background-image: url('https://imgs.search.brave.com/-vnk-6l1SF350sX9qhaUWcz_2WeNaAb7BZwD9TuAkdk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvMjcweDIw/MC8xMzc4NzkxNy5q/cGc_az1mNjk2NWQw/Y2RhMGE2YzczYzRk/MjZiNTdiZTIxZTRk/ZjQ2ODIwNmFlMjQw/NDE0YzEzMzNlOWYz/ZmYyMDUxYzU1Jm89');"></section>
 
   <!-- Galería profesional -->
-  <section id="galeria" class="px-6 py-10 max-w-6xl mx-auto">
+  <section class="px-6 py-10 max-w-6xl mx-auto">
   <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Galería</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
     <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
@@ -208,101 +184,129 @@ nav a:hover {
       <img src="https://www.hola.com/horizon/landscape/4c15d31a029b-jardines-verdes-t.jpg" alt="Jardín verde" class="w-full h-full object-cover" />
     </div>
     <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Fp8V5uPj9efh87OyWD9uehz0s5oNKjA&usqp=CAU" alt="Piscina en hostería" class="w-full h-full object-cover" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYatb7Mv5ZHvE8hUYhQNSamwziiNAtITDcww&s" alt="Imagen 3" class="w-full h-full object-cover" />
     </div>
     <div class="w-[250px] h-[250px] overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvxlgD85UJqYVTuC_S8Zq56QrOUEEjCHeqA&usqp=CAU" alt="Vista panorámica de la hostería" class="w-full h-full object-cover" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHSRPJ3WpVYsO9NxgxbHi0yBoiTWM4h-5xg&s" alt="Imagen 4" class="w-full h-full object-cover" />
     </div>
   </div>
+
+  <!-- Modal para ampliar imagen -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    document.getElementById('modal').onclick = () => document.getElementById('modal').classList.add('hidden');
+  </script>
 </section>
 
   <!-- Ubicación -->
-  <section id="ubicacion" class="px-6 py-10 max-w-5xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Ubicación</h2>
-  <p class="mb-6 text-lg leading-relaxed">Estamos ubicados en un entorno privilegiado, rodeados de naturaleza y con acceso fácil desde la ciudad. Ven a descubrir la belleza natural de las sierras tandilenses y disfruta de un descanso en contacto con la flora y fauna local.</p>
-  <iframe class="w-full rounded-md" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26284.676872954936!2d-59.188290209983255!3d-37.32484049777407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bbbdcb3ae0acbb%3A0x3f90dbda08c24631!2sTandil%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1685007179351!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</section>
+  <section class="px-6 py-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Ubicación</h2>
+    <p class="text-lg mb-4">Estamos ubicados en las sierras de Tandil, Argentina.</p>
+    <iframe
+      src="https://maps.google.com/maps?q=Tandil%20Argentina&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="300"
+      class="rounded-lg border-2 border-green-700"
+    ></iframe>
+  </section>
 
   <!-- Mapa interactivo de habitaciones -->
-  <section id="mapa-habitaciones" class="px-6 py-10 max-w-4xl mx-auto">
+  <section class="px-6 py-10 max-w-4xl mx-auto">
     <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Mapa de Habitaciones</h2>
-    <div class="map-container">
-      <div class="room" data-room="101">Habitación 101</div>
-      <div class="room reserved" data-room="102">Habitación 102</div>
-      <div class="room" data-room="103">Habitación 103</div>
-      <div class="room" data-room="104">Habitación 104</div>
-      <div class="room reserved" data-room="105">Habitación 105</div>
-      <div class="room" data-room="106">Habitación 106</div>
-      <div class="dining" colspan="3">Comedor</div>
+    <div class="map-container" aria-label="Mapa interactivo de habitaciones y comedor">
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 1" onclick="selectRoom('Habitación 1')">Habitación 1</div>
+      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 2" onclick="selectRoom('Habitación 2')">Habitación 2</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 3" onclick="selectRoom('Habitación 3')">Habitación 3</div>
+      <div class="dining" aria-label="Comedor">Comedor</div>
+      <div class="room" tabindex="0" role="button" aria-pressed="false" aria-label="Habitación 4" onclick="selectRoom('Habitación 4')">Habitación 4</div>
     </div>
   </section>
 
   <!-- Formulario de reservas -->
-  <section id="reservas" class="px-6 py-10 max-w-3xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
-  <form action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col gap-4">
-    <label for="nombre" class="font-semibold">Nombre completo:</label>
-    <input type="text" id="nombre" name="nombre" required />
-
-    <label for="email" class="font-semibold">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="checkin" class="font-semibold">Fecha de entrada:</label>
-    <input type="date" id="checkin" name="checkin" required />
-
-    <label for="checkout" class="font-semibold">Fecha de salida:</label>
-    <input type="date" id="checkout" name="checkout" required />
-
-    <label for="habitacion" class="font-semibold">Habitación:</label>
-    <select id="habitacion" name="habitacion" required>
-      <option value="" disabled selected>Seleccione una habitación</option>
-      <option value="101">Habitación 101</option>
-      <option value="102">Habitación 102</option>
-      <option value="103">Habitación 103</option>
-      <option value="104">Habitación 104</option>
-      <option value="105">Habitación 105</option>
-      <option value="106">Habitación 106</option>
-    </select>
-
-    <label for="mensaje" class="font-semibold">Mensaje adicional:</label>
-    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tus solicitudes o preguntas"></textarea>
-
-    <button type="submit">Enviar reserva</button>
-  </form>
+  <section class="px-6 py-10 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Reservas</h2>
+    <form id="reservation-form" action="https://formspree.io/f/your_form_id" method="POST" class="grid gap-4">
+      <input type="text" name="nombre" placeholder="Tu nombre" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
+      <input type="email" name="email" placeholder="Tu email" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
+      <input type="text" name="habitacion" id="habitacion" placeholder="Habitación" class="bg-gray-700 border border-gray-600 p-2 rounded text-gray-300" readonly />
+      <input type="text" name="fechas" id="fechas" placeholder="Fechas de estadía" class="bg-gray-800 border border-gray-600 p-2 rounded text-white" required />
+      <textarea name="mensaje" placeholder="Mensaje o detalles de tu reserva" class="bg-gray-800 border border-gray-600 p-2 rounded text-white"></textarea>
+      <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition">Enviar reserva</button>
+    </form>
   </section>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>© 2025 Raíces Serranas. Todos los derechos reservados.</p>
+    <!-- WhatsApp flotante -->
+<a
+  href="https://wa.me/5491234567890"
+  target="_blank"
+  rel="noopener noreferrer"
+  id="whatsapp-button"
+  aria-label="Contactar por WhatsApp"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
+    alt="WhatsApp"
+    style="width: 40px; height: 40px;"
+  />
+</a>
+  
+  <!-- Instagram flotante -->
+  <a
+  href="https://www.instagram.com/tu_usuario"
+  target="_blank"
+  rel="noopener noreferrer"
+  id="instagram-button"
+  aria-label="Visitar Instagram"
+>
+  <img
+    src="https://imgs.search.brave.com/_B-FpDvjsFy1gn-APQ-FDaKOiWV3hCfa37qXlK6k-WA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODBiNTdmY2Q5OTk2/ZTI0YmM0M2M1MjEu/cG5n"
+    alt="Instagram"
+    style="width: 40px; height: 40px;"
+  />
+</a>
+
+  <footer class="text-center text-sm text-gray-300 bg-green-800 p-4 mt-8">
+    © 2025 Raíces Serranas - Todos los derechos reservados
   </footer>
 
+  <!-- Script de selección y disponibilidad -->
   <script>
-    function openModal(src) {
-      const modal = document.createElement('div');
-      modal.style.position = 'fixed';
-      modal.style.top = 0;
-      modal.style.left = 0;
-      modal.style.width = '100vw';
-      modal.style.height = '100vh';
-      modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
-      modal.style.display = 'flex';
-      modal.style.justifyContent = 'center';
-      modal.style.alignItems = 'center';
-      modal.style.zIndex = 9999;
-      modal.style.cursor = 'pointer';
-      modal.addEventListener('click', () => {
-        document.body.removeChild(modal);
-      });
+    const reservedRooms = ["Habitación 2", "Habitación 4"]; // Habitaciones reservadas
 
-      const img = document.createElement('img');
-      img.src = src;
-      img.style.maxWidth = '90%';
-      img.style.maxHeight = '90%';
-      img.style.borderRadius = '8px';
-      modal.appendChild(img);
+    const picker = new Litepicker({
+      element: document.getElementById('fechas'),
+      singleMode: false,
+      format: 'DD/MM/YYYY',
+    });
 
-      document.body.appendChild(modal);
+    function selectRoom(roomName) {
+      if (reservedRooms.includes(roomName)) return;
+      const habitacionInput = document.getElementById('habitacion');
+      habitacionInput.value = roomName;
+      habitacionInput.focus();
+      document.getElementById('reservation-form').scrollIntoView({ behavior: 'smooth' });
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const rooms = document.querySelectorAll('.room');
+      rooms.forEach(room => {
+        const name = room.textContent.trim();
+        if (reservedRooms.includes(name)) {
+          room.classList.add('reserved');
+          room.setAttribute('aria-disabled', 'true');
+        }
+      });
+    });
   </script>
+  
+
 </body>
 </html>
