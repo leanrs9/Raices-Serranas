@@ -8,8 +8,6 @@
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
   <style>
-    /* Tus estilos originales + mínimos ajustes */
-
     .room {
       background-color: #16a34a; /* Verde disponible */
       color: white;
@@ -50,10 +48,31 @@
       background-color: #064e3b;
       color: #a7f3d0;
       padding: 1.5rem 1rem;
-      text-align: center;
       box-shadow: 0 4px 6px rgb(0 0 0 / 0.3);
       margin-bottom: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+
+      /* Flex para alinear texto y logo */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
     }
+    header .header-text {
+      flex: 1;
+    }
+    header h1 {
+      font-size: 2.25rem; /* text-4xl */
+      font-weight: 700;
+      margin: 0;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem; /* text-base */
+    }
+
     footer {
       background-color: #064e3b;
       color: #a7f3d0;
@@ -126,69 +145,72 @@
       background-color: #128C7E;
     }
 
-  #instagram-button {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: filter 0.3s ease;
-    z-index: 1000;
-    padding: 8px;
-  }
-  #instagram-button:hover {
-    filter: brightness(0.85);
-  }
-/* Barra de navegación principal */
-nav {
-  max-width: 960px;
-  margin: 2rem auto 2.5rem auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  background: none;        /* Eliminamos el fondo */
-  border-radius: 0;        /* Sin bordes redondeados */
-  box-shadow: none;        /* Sin sombra */
-}
+    #instagram-button {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+      z-index: 1000;
+      padding: 8px;
+    }
+    #instagram-button:hover {
+      filter: brightness(0.85);
+    }
+    /* Barra de navegación principal */
+    nav {
+      max-width: 960px;
+      margin: 2rem auto 2.5rem auto;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: none;        /* Eliminamos el fondo */
+      border-radius: 0;        /* Sin bordes redondeados */
+      box-shadow: none;        /* Sin sombra */
+    }
 
-/* Botones de navegación modernos */
-nav a {
-  background-color: #2f7c6e; /* Verde medio elegante */
-  color: #f4f4f4; /* Blanco humo */
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+    /* Botones de navegación modernos */
+    nav a {
+      background-color: #2f7c6e; /* Verde medio elegante */
+      color: #f4f4f4; /* Blanco humo */
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-/* Hover con transición suave y refinada */
-nav a:hover {
-  background-color: #3d9d89; /* Verde más claro para hover */
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
+    /* Hover con transición suave y refinada */
+    nav a:hover {
+      background-color: #3d9d89; /* Verde más claro para hover */
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
     
   </style>
 </head>
 <body class="text-gray-200 bg-gray-900">
   <!-- Encabezado -->
-  <header class="bg-green-800 text-white p-6 text-center shadow-md mb-0">
-    <h1 class="text-4xl font-bold">Raíces Serranas</h1>
-    <p class="text-base mt-2">Naturaleza, descanso y tranquilidad en las sierras</p>
+  <header>
+    <div class="header-text">
+      <h1>Raíces Serranas</h1>
+      <p>Naturaleza, descanso y tranquilidad en las sierras</p>
+    </div>
+    <img src="" alt="Logo Raíces Serranas" style="width: 80px; height: 80px; object-fit: contain; margin-left: 1rem;" />
   </header>
 
   <!-- Navegación -->
@@ -203,134 +225,114 @@ nav a:hover {
   <section class="px-6 py-8 max-w-5xl mx-auto">
     <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Sobre Nosotros</h2>
     <p class="text-lg leading-relaxed">
-      Una hostería única, ubicada en el corazón de las sierras tandilenses. Ofrecemos una experiencia completa para quienes buscan descansar, desconectar de la rutina y conectar con la naturaleza. Contamos con servicio de spa para relajarte por completo, desayuno casero con productos frescos, una hermosa pileta para disfrutar en verano y espacios diseñados para que te desconectes del estrés cotidiano. Aquí podrás respirar aire puro, reconectar con el entorno natural y disfrutar de momentos inolvidables en un ambiente cálido y familiar.
+      Una hostería única, ubicada en el corazón de las sierras tandilenses. Ofrecemos una experiencia completa para quienes buscan descansar, desconectar de la rutina y conectar con la naturaleza.
     </p>
   </section>
 
   <!-- Imagen principal -->
-  <div class="bg-main-image mx-auto"></div>
+  <div class="bg-main-image max-w-5xl mx-auto rounded-lg"></div>
 
-  <!-- Galería de imágenes -->
-  <section id="galeria" class="px-6 py-8 max-w-5xl mx-auto">
-    <h2>Galería</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="https://imgs.search.brave.com/1e7GgLFukOauCXWwLXwrzj5zZJjyn3UooFqgxnITgn0/rs:fit:450:300:1/g:ce/aHR0cHM6Ly9jZm9y/bWVkYWNlcmFzLmNv/bS9pbWFnZXMvY2Fz/YXMvYm9yZC1ob3Rl/bGluLWdyb3VwLmpw/Zw" alt="Habitación 1" class="cursor-pointer rounded shadow-lg object-cover w-full h-48" onclick="openModal(this.src)" />
-      <img src="https://imgs.search.brave.com/92NY4owZ5A27cbjsHxd9bQxT6dcOT43Gr98LBpTVB0I/rs:fit:450:300:1/g:ce/aHR0cHM6Ly9jZm9y/bWVkYWNlcmFzLmNv/bS9pbWFnZXMvY2Fz/YXMvYm9yZC1oaWJh/dGFjaW9uLWdyb3Vw/LmpwZw" alt="Habitación 2" class="cursor-pointer rounded shadow-lg object-cover w-full h-48" onclick="openModal(this.src)" />
-      <img src="https://imgs.search.brave.com/n4l7NlPq9_FsyxyFizVPSRA5U2Zl2a2owkPyDWjO4TQ/rs:fit:450:300:1/g:ce/aHR0cHM6Ly9jZm9y/bWVkYWNlcmFzLmNv/bS9pbWFnZXMvY2Fz/YXMvYm9yZC1jb21l/dGUtZGVzYWktZG9u/LmpwZw" alt="Habitación 3" class="cursor-pointer rounded shadow-lg object-cover w-full h-48" onclick="openModal(this.src)" />
+  <!-- Habitaciones -->
+  <section id="mapa" class="px-6 max-w-5xl mx-auto mb-8">
+    <h2 class="text-3xl font-semibold mb-6 border-b pb-2 border-green-500">Habitaciones</h2>
+    <div class="map-container">
+      <div class="room" id="habitacion1">Habitación 1</div>
+      <div class="room" id="habitacion2">Habitación 2</div>
+      <div class="room reserved" id="habitacion3">Habitación 3 (Reservada)</div>
     </div>
-
-    <!-- Modal para imágenes -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" onclick="closeModal()">
-      <img id="modal-img" src="" alt="Ampliar imagen" class="max-w-4xl max-h-[80vh] rounded shadow-lg" onclick="event.stopPropagation()" />
-    </div>
-  </section>
-
-  <!-- Ubicación -->
-  <section id="ubicacion" class="px-6 py-8 max-w-5xl mx-auto">
-    <h2>Ubicación</h2>
-    <p class="mb-6">
-      Estamos ubicados en la zona más tranquila de las sierras, rodeados de naturaleza y a pocos minutos del centro de Tandil. Ven a descubrir un paraíso natural donde podrás relajarte y disfrutar de la belleza serrana.
-    </p>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6646.264784805958!2d-59.13565548158979!3d-37.32388997984253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0d33eb267d9f%3A0x4ec882cd544fc1db!2sTandil%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1686582907632!5m2!1ses!2sar"
-      width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
-
-  <!-- Mapa de habitaciones -->
-  <section id="mapa" class="px-6 py-8 max-w-5xl mx-auto">
-    <h2>Habitaciones Disponibles</h2>
-    <div class="map-container mb-6">
-      <div class="room" data-room="Habitación 1">Habitación 1</div>
-      <div class="room reserved" data-room="Habitación 2">Habitación 2 (Reservada)</div>
-      <div class="room" data-room="Habitación 3">Habitación 3</div>
-      <div class="dining">Comedor</div>
-      <div class="room" data-room="Habitación 4">Habitación 4</div>
-      <div class="room" data-room="Habitación 5">Habitación 5</div>
-    </div>
-    <p>Haz click en una habitación para seleccionar la reserva.</p>
   </section>
 
   <!-- Formulario de reservas -->
-  <section id="reservas" class="px-6 py-8 max-w-5xl mx-auto">
-    <h2>Reserva tu estadía</h2>
-    <form action="https://formspree.io/f/yourFormIdHere" method="POST" class="flex flex-col gap-4 max-w-xl mx-auto bg-gray-800 p-6 rounded shadow-lg">
-      <label for="name">Nombre completo:</label>
-      <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="_replyto" required placeholder="tuemail@ejemplo.com" />
-
-      <label for="room">Habitación deseada:</label>
-      <input type="text" id="room" name="room" readonly placeholder="Selecciona una habitación del mapa" required />
-
-      <label for="dateRange">Fecha de estadía:</label>
-      <input type="text" id="dateRange" name="dateRange" placeholder="Selecciona rango de fechas" readonly required />
-
-      <label for="message">Comentarios adicionales:</label>
-      <textarea id="message" name="message" rows="3" placeholder="Escribe aquí tus comentarios..."></textarea>
-
+  <section id="reservas" class="px-6 max-w-5xl mx-auto mb-8">
+    <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Reserva tu estadía</h2>
+    <form id="formularioReserva" class="flex flex-col max-w-md mx-auto gap-4">
+      <label>
+        Nombre completo:
+        <input type="text" name="nombre" required />
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Fecha de llegada:
+        <input type="text" id="fechaLlegada" name="fechaLlegada" required readonly />
+      </label>
+      <label>
+        Fecha de salida:
+        <input type="text" id="fechaSalida" name="fechaSalida" required readonly />
+      </label>
+      <label>
+        Habitación:
+        <select name="habitacion" required>
+          <option value="">Seleccione una habitación</option>
+          <option value="habitacion1">Habitación 1</option>
+          <option value="habitacion2">Habitación 2</option>
+          <option value="habitacion3" disabled>Habitación 3 (Reservada)</option>
+        </select>
+      </label>
       <button type="submit">Enviar reserva</button>
     </form>
   </section>
 
-  <!-- Footer -->
+  <!-- Ubicación -->
+  <section id="ubicacion" class="px-6 max-w-5xl mx-auto mb-8">
+    <h2 class="text-3xl font-semibold mb-4 border-b pb-2 border-green-500">Ubicación</h2>
+    <p class="mb-4">Estamos ubicados en Tandil, en un entorno natural y tranquilo.</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.206733354707!2d-59.13782448482915!3d-37.32697987983113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x958abecfcb97b1f7%3A0x1e9d6fa9b83e6b04!2sTandil%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1686545445070!5m2!1ses!2sar"
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Botones flotantes de contacto -->
+  <a id="whatsapp-button" href="https://wa.me/549123456789" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M20.52 3.48a11.87 11.87 0 00-16.8 0c-4.7 4.7-4.6 12.7.4 17.6l-2.8 5.3 5.3-2.8a11.87 11.87 0 0017.5-16.1zm-8 15a7.88 7.88 0 01-4.3-1.3l-.3-.2-2.5.7.7-2.5-.2-.3a7.85 7.85 0 1116 4.3 7.8 7.8 0 01-9.7-1.1zm2.3-2.4c-.2 0-1.2-.5-1.3-.6-.2-.1-.5-.2-.8.2-.3.4-1 .6-1.2.7-.2.1-.3 0-.5-.2a3.3 3.3 0 01-1-1.2c-.1-.2 0-.4 0-.5.1-.1.3-.3.5-.5.1-.1.2-.2.2-.3a2.1 2.1 0 00-.4-1c-.2-.3-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6s-.4 0-.7 0a1.3 1.3 0 00-1 .6 4.5 4.5 0 00-1.4 3.3c0 1.9 1.5 3.8 1.8 4 .3.2 3.1 4.8 7.5 6.7a9.3 9.3 0 003.2.6 8.7 8.7 0 004.9-1.4 4.5 4.5 0 001.3-3 7.5 7.5 0 00-3.7-6.8 5.1 5.1 0 00-3-.9z"/>
+    </svg>
+  </a>
+
+  <a id="instagram-button" href="https://instagram.com/tu_usuario" target="_blank" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+    </svg>
+  </a>
+
   <footer>
-    &copy; 2025 Raíces Serranas - Todos los derechos reservados
+    © 2025 Raíces Serranas - Todos los derechos reservados
   </footer>
 
-  <!-- Botones flotantes -->
-  <a href="https://wa.me/549123456789" target="_blank" id="whatsapp-button" aria-label="WhatsApp">
-    <svg fill="white" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M20.52 3.48A11.91 11.91 0 0 0 3.48 20.52l-.64 4.39 4.5-1.18a11.96 11.96 0 0 0 13.18-20.25zM12.02 19a7.42 7.42 0 0 1-4.03-1.19l-.28-.18-2.4.63.64-2.33-.19-.3A7.45 7.45 0 0 1 4.54 8.77a7.52 7.52 0 0 1 13.33-3.8 7.41 7.41 0 0 1-5.85 12.04z"/><path d="M15.61 14.33c-.21 0-1.2-.58-1.38-.65-.18-.07-.31-.1-.44.1s-.5.64-.6.77-.22.15-.43.05a4.46 4.46 0 0 1-1.31-.8 4.9 4.9 0 0 1-1.44-1.79c-.15-.3 0-.46.11-.55.11-.1.25-.23.38-.35.13-.13.18-.23.28-.38a.63.63 0 0 0 .1-.35c0-.12-.44-1.07-.6-1.47s-.3-.33-.43-.33h-.37a.9.9 0 0 0-.66.3 2.84 2.84 0 0 0-.9 2.13 5.31 5.31 0 0 0 3.5 4.81 5.33 5.33 0 0 0 4.35-.6 4.12 4.12 0 0 0 1.25-1.54 3.75 3.75 0 0 0-.82-4.64 3.65 3.65 0 0 0-2.09-1.18z"/></svg>
-  </a>
-  <a href="https://instagram.com/tuusuario" target="_blank" id="instagram-button" aria-label="Instagram">
-    <svg fill="white" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.99 2 22 4.02 22 7.75v8.5C22 19.98 19.99 22 16.25 22h-8.5C4.01 22 2 19.98 2 16.25v-8.5C2 4.02 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5c0 2.07 1.68 3.75 3.75 3.75h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5c0-2.07-1.68-3.75-3.75-3.75h-8.5zm4.25 3a4.25 4.25 0 1 1 0 8.5 4.25 4.25 0 0 1 0-8.5zm0 2a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5zm4.5-.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-  </a>
-
   <script>
-    // Modal para galería
-    function openModal(src) {
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modal-img');
-      modalImg.src = src;
-      modal.classList.remove('hidden');
-    }
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-    }
-
-    // Litepicker para rango de fechas
-    const picker = new Litepicker({
-      element: document.getElementById('dateRange'),
-      singleMode: false,
-      numberOfMonths: 2,
-      numberOfColumns: 2,
+    // Inicializar Litepicker para fechas de llegada y salida
+    const pickerLlegada = new Litepicker({
+      element: document.getElementById('fechaLlegada'),
+      singleMode: true,
       format: 'DD/MM/YYYY',
-      autoApply: true,
-      dropdowns: {
-        minYear: new Date().getFullYear(),
-        maxYear: new Date().getFullYear() + 2,
-        months: true,
-        years: true,
-      },
-      tooltipText: {
-        one: 'día',
-        other: 'días',
-      },
-      setup: (picker) => {
-        picker.on('selected', (date1, date2) => {
-          // date1 y date2 son objetos Date o null
-        });
-      },
+      dropdowns: { minYear: 2023, maxYear: 2030, months: true, years: true },
+      tooltipText: { one: 'día', other: 'días' }
+    });
+    const pickerSalida = new Litepicker({
+      element: document.getElementById('fechaSalida'),
+      singleMode: true,
+      format: 'DD/MM/YYYY',
+      dropdowns: { minYear: 2023, maxYear: 2030, months: true, years: true },
+      tooltipText: { one: 'día', other: 'días' }
     });
 
-    // Cambiar input habitación según click en mapa
-    document.querySelectorAll('.room:not(.reserved)').forEach(room => {
-      room.addEventListener('click', () => {
-        document.getElementById('room').value = room.dataset.room;
-        // Resalta la habitación seleccionada
-        document.querySelectorAll('.room').forEach(r => r.classList.remove('bg-green-600', 'text-white'));
-        room.classList.add('bg-green-600', 'text-white');
-      });
+    // Validar que la fecha de salida sea posterior a la llegada
+    pickerSalida.on('show', () => {
+      const llegadaDate = pickerLlegada.getDate();
+      if (llegadaDate) {
+        pickerSalida.setMinDate(llegadaDate.clone().add(1, 'day'));
+      }
+    });
+
+    // Formulario de reservas (solo ejemplo simple)
+    document.getElementById('formularioReserva').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Gracias por reservar con Raíces Serranas. Nos contactaremos pronto.');
+      e.target.reset();
+      pickerLlegada.clear();
+      pickerSalida.clear();
     });
   </script>
 </body>
